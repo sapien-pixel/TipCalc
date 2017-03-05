@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SettingsViewControllerDelegate {
     
     @IBOutlet weak var tipPercent: UILabel!
     @IBOutlet weak var tipAmount: UILabel!
@@ -18,10 +18,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitAmount: UILabel!
     @IBOutlet weak var tipSlider: UISlider!
     @IBOutlet weak var splitSlider: UISlider!
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     
     var billValue: String = "0.00"
     var tipPercentValue: String = "0"
     var splitValue = "1"
+    
+    var maxTipPercentage: String = "99"
+    var maxPeopleCount: String = "10"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +70,27 @@ class ViewController: UIViewController {
         splitAmount.text = "0.00"
         billIncludingTip.text = "0.00"
     }
+    @IBAction func settingsButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
+        controller.delegate=self
+        controller.maxTipPercentage = self.maxTipPercentage
+        controller.maxPeopleCount = self.maxPeopleCount
+        self.show(controller, sender: sender)
+    }
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    func passData(tip: String?, people: String?) {
+        self.maxTipPercentage = tip!
+        self.maxPeopleCount=people!
+        tipSlider.maximumValue = Float(tip!)!
+        splitSlider.maximumValue = Float(people!)!
+        reset()
     }
     
 }
@@ -83,6 +103,8 @@ extension ViewController {
     }
     
     func reset() {
+        tipSlider.value = 0
+        splitSlider.value = 1
         tipPercent.text = "0%"
         numberOfPeople.text = "1"
     }

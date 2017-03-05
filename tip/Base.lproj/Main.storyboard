@@ -246,7 +246,7 @@
                     <navigationItem key="navigationItem" id="hnG-Sc-PeE">
                         <barButtonItem key="rightBarButtonItem" image="setting" style="plain" id="Zkb-X6-Kxg">
                             <connections>
-                                <segue destination="UY5-61-QJL" kind="show" id="OIC-dZ-ATc"/>
+                                <action selector="settingsButtonPressed:" destination="Tnu-RB-M5y" id="Bfe-zZ-F8k"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -254,6 +254,7 @@
                         <outlet property="billAmount" destination="mq2-CD-uGs" id="5GW-xw-AFK"/>
                         <outlet property="billIncludingTip" destination="Htv-ft-yRI" id="7eL-1k-r2k"/>
                         <outlet property="numberOfPeople" destination="42F-sW-PIp" id="Vsa-Fn-q2d"/>
+                        <outlet property="settingsButton" destination="Zkb-X6-Kxg" id="LbB-Jy-ldg"/>
                         <outlet property="splitAmount" destination="XLV-zf-MbB" id="JUA-dw-zAU"/>
                         <outlet property="splitSlider" destination="chB-x1-2Es" id="A2Z-7D-EgA"/>
                         <outlet property="tipAmount" destination="S3W-52-OVN" id="0Ur-oO-v8v"/>
@@ -268,7 +269,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Cx8-qq-mqR">
             <objects>
-                <tableViewController id="UY5-61-QJL" customClass="SettingsViewController" customModule="tip" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settings" id="UY5-61-QJL" customClass="SettingsViewController" customModule="tip" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="I0g-JY-CwD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,8 +290,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ele-Xa-OMK">
-                                                    <rect key="frame" x="243" y="10" width="94" height="29"/>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="ele-Xa-OMK">
+                                                    <rect key="frame" x="241" y="10" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="changeMaxTipPercent:" destination="UY5-61-QJL" eventType="valueChanged" id="WC4-re-GaY"/>
                                                     </connections>
@@ -303,7 +304,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ele-Xa-OMK" secondAttribute="trailing" constant="30" id="PQF-hV-8uk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ele-Xa-OMK" secondAttribute="trailing" constant="32" id="PQF-hV-8uk"/>
                                                 <constraint firstItem="glf-LH-yGQ" firstAttribute="leading" secondItem="wZ9-IG-mkO" secondAttribute="leading" constant="20" id="c8K-6h-Ois"/>
                                                 <constraint firstItem="ele-Xa-OMK" firstAttribute="centerY" secondItem="glf-LH-yGQ" secondAttribute="centerY" id="i4q-Vt-g1X"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="O51-ol-75m" secondAttribute="trailing" constant="10" id="qPJ-3b-A7Z"/>
@@ -325,8 +326,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xFP-xl-i46">
-                                                    <rect key="frame" x="243" y="7" width="94" height="29"/>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="xFP-xl-i46">
+                                                    <rect key="frame" x="241" y="7" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="maxPeopleSplit:" destination="UY5-61-QJL" eventType="valueChanged" id="agg-eX-wUT"/>
                                                     </connections>
@@ -341,7 +342,7 @@
                                             <constraints>
                                                 <constraint firstItem="xFP-xl-i46" firstAttribute="centerY" secondItem="Imu-9l-gas" secondAttribute="centerY" id="7aj-iU-8DD"/>
                                                 <constraint firstItem="Imu-9l-gas" firstAttribute="leading" secondItem="VWI-Ca-q6Y" secondAttribute="leading" constant="20" id="L6Q-6G-k4u"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="xFP-xl-i46" secondAttribute="trailing" constant="30" id="ffp-Qe-u2d"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xFP-xl-i46" secondAttribute="trailing" constant="32" id="ffp-Qe-u2d"/>
                                                 <constraint firstItem="GfA-1J-CCI" firstAttribute="centerY" secondItem="Imu-9l-gas" secondAttribute="centerY" id="gCO-yR-3qG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GfA-1J-CCI" secondAttribute="trailing" constant="10" id="jTK-AA-a4G"/>
                                                 <constraint firstItem="Imu-9l-gas" firstAttribute="centerY" secondItem="VWI-Ca-q6Y" secondAttribute="centerY" id="x9b-UD-x8t"/>
@@ -361,11 +362,13 @@
                         <outlet property="maxPeopleSplit" destination="xFP-xl-i46" id="d1r-ry-qeO"/>
                         <outlet property="maxTipPercent" destination="O51-ol-75m" id="qLE-fL-pzT"/>
                         <outlet property="stepMaxTipPercent" destination="ele-Xa-OMK" id="1rM-3f-fH7"/>
+                        <outlet property="tView" destination="I0g-JY-CwD" id="EE0-5b-F6y"/>
+                        <outlet property="tableView" destination="I0g-JY-CwD" id="dhP-99-6Ni"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryY-UL-Vbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.60000000000002" y="28.335832083958024"/>
+            <point key="canvasLocation" x="895" y="30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cl0-nK-vfQ">
