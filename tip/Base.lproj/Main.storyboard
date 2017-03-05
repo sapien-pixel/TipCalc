@@ -53,6 +53,9 @@
                                         <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="billAmoutChanged:" destination="Tnu-RB-M5y" eventType="editingDidEnd" id="HVg-fh-NYw"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30196078431372547" green="0.49411764705882355" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +81,7 @@
                                         <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-mg-GKs">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zGG-mg-GKs">
                                         <rect key="frame" x="23" y="71" width="309" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="PiD-Pp-VS7"/>
@@ -87,8 +90,8 @@
                                             <action selector="tipPercentChanged:" destination="Tnu-RB-M5y" eventType="valueChanged" id="bxj-ZH-Ky7"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-6f-0as">
-                                        <rect key="frame" x="288" y="55" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-6f-0as">
+                                        <rect key="frame" x="307" y="55" width="23" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -114,9 +117,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htv-ft-yRI">
-                                        <rect key="frame" x="25" y="41" width="119" height="40"/>
+                                        <rect key="frame" x="25" y="41" width="305" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="119" id="F02-Zt-4dv"/>
                                             <constraint firstAttribute="height" constant="40" id="K54-g4-QJU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -129,6 +131,7 @@
                                     <constraint firstItem="rb6-gw-4ef" firstAttribute="leading" secondItem="wT2-Kf-61H" secondAttribute="leading" constant="25" id="79u-Dn-O3s"/>
                                     <constraint firstItem="Htv-ft-yRI" firstAttribute="leading" secondItem="rb6-gw-4ef" secondAttribute="leading" id="FR1-3D-azp"/>
                                     <constraint firstItem="Htv-ft-yRI" firstAttribute="top" secondItem="rb6-gw-4ef" secondAttribute="bottom" constant="5" id="dsg-PQ-azX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Htv-ft-yRI" secondAttribute="trailing" constant="45" id="geX-CA-xwc"/>
                                     <constraint firstItem="rb6-gw-4ef" firstAttribute="top" secondItem="wT2-Kf-61H" secondAttribute="top" constant="15" id="sQT-fK-pMu"/>
                                 </constraints>
                             </view>
@@ -141,8 +144,8 @@
                                         <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42F-sW-PIp">
-                                        <rect key="frame" x="25" y="41" width="18" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42F-sW-PIp">
+                                        <rect key="frame" x="25" y="41" width="41" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="fq0-04-JJG"/>
                                         </constraints>
@@ -181,7 +184,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLV-zf-MbB">
-                                        <rect key="frame" x="25" y="46" width="161" height="60"/>
+                                        <rect key="frame" x="25" y="46" width="305" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="54B-F5-CNr"/>
                                         </constraints>
@@ -196,6 +199,7 @@
                                     <constraint firstItem="XLV-zf-MbB" firstAttribute="leading" secondItem="tTZ-aA-kNo" secondAttribute="leading" constant="25" id="Ion-6t-z5a"/>
                                     <constraint firstItem="EdB-rV-Xae" firstAttribute="top" secondItem="tTZ-aA-kNo" secondAttribute="top" constant="15" id="J93-hZ-wTs"/>
                                     <constraint firstItem="XLV-zf-MbB" firstAttribute="top" secondItem="EdB-rV-Xae" secondAttribute="bottom" constant="10" id="Jgv-R8-KUt"/>
+                                    <constraint firstAttribute="trailing" secondItem="XLV-zf-MbB" secondAttribute="trailing" constant="45" id="Y8k-Ay-LNt"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuQ-jI-2Ba">
@@ -243,13 +247,15 @@
                         <outlet property="billIncludingTip" destination="Htv-ft-yRI" id="7eL-1k-r2k"/>
                         <outlet property="numberOfPeople" destination="42F-sW-PIp" id="Vsa-Fn-q2d"/>
                         <outlet property="splitAmount" destination="XLV-zf-MbB" id="JUA-dw-zAU"/>
+                        <outlet property="splitSlider" destination="chB-x1-2Es" id="A2Z-7D-EgA"/>
                         <outlet property="tipAmount" destination="S3W-52-OVN" id="0Ur-oO-v8v"/>
                         <outlet property="tipPercent" destination="rNI-6f-0as" id="Vn2-ZA-je5"/>
+                        <outlet property="tipSlider" destination="zGG-mg-GKs" id="Onv-1g-pz4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKO-82-hN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-855" y="31"/>
+            <point key="canvasLocation" x="-855.20000000000005" y="30.134932533733135"/>
         </scene>
     </scenes>
 </document>
