@@ -61,6 +61,8 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
         if billValue == "" {
             billValue = "0.00"
         }
+        tipPercentValue = String(format: "%.0f", tipSlider.value)
+        splitValue = String(format: "%.0f", splitSlider.value)
         let total = Float(billValue)! * (1 + 0.01 * Float(tipPercentValue)!)
         billIncludingTip.text = String(format: "%.2f",total)
         splitAmount.text = String(format: "%.2f",total / Float(splitValue)!)
